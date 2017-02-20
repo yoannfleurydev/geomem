@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Geomem</title>
+        <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="manifest" href="manifest.webmanifest">
+    </head>
+    <body>
+        <header>
+            <h1>GeoMem</h1>
+        </header>
+        <section class="sub-header">
+            <div id="alert"></div> 
+        </section>
+        <section>
+            <h2>Map</h2>
+            <div id="map"></div>
+        </section>
+        <section>
+            <ul id="locationsList">
+            </ul>
+        </section>
+        <section>
+            <h2>Save</h2>
+            <input type="text" placeholder="Name" value="" id="name">
+            <input type="number" placeholder="Latitude" value="" id="latitude">
+            <input type="number" placeholder="Longitude" value="" id="longitude">
+            <button id="save">Add</button>
+        </section>
+        
+        <script src="node_modules/leaflet/dist/leaflet.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

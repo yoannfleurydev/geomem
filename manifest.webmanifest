@@ -1,0 +1,12 @@
+{
+  "name": "GeoMem",
+  "short_name": "GeoMem",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "A little app to store where you have been.",
+  "icons": [],
+  "related_applications": [{
+    "platform": "web"
+  }]
+}

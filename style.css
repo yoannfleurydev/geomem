@@ -1,0 +1,44 @@
+:root {
+    --alert-background-color: #F44336;
+    --dark-background-color: #1e2327;
+    --dark-text-color : #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header {
+    background: var(--dark-background-color);
+    color: var(--dark-text-color);
+    text-align: center;
+    padding: 1%;
+}
+
+/*-- Alert --*/
+.alert {
+    background: var(--alert-background-color);
+    cursor: pointer;
+}
+
+.alert-title {
+    font-size: 150%;
+    color: var(--dark-text-color);
+}
+
+.alert-description {
+    color: var(--dark-text-color);
+}
+
+button.alert-close {
+    background: none;
+    border: none;
+    position: relative;
+    top: 0px;
+    right: 0px;
+}
+
+/*-- Map --*/
+#map { height: 500px; }

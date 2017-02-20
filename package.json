@@ -1,0 +1,18 @@
+{
+  "name": "geomem",
+  "version": "0.0.1",
+  "description": "Application to set the location you were one day",
+  "main": "index.html",
+  "dependencies": {
+    "leaflet": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yoann Fleury <yoann.fleury@yahoo.com>",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/yoannfleurydev/geomem"
+  }
+}
