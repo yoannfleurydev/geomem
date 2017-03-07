@@ -59,8 +59,10 @@ const INFO = '#00BCD4';
 
 // Useful function to refresh the GUI when the user add a new location.
 function refreshUI() {
-    // Map related code
-    locationsList.childNodes.forEach((node) => locationsList.removeChild(node));
+    while (locationsList.firstChild) {
+        locationsList.removeChild(locationsList.firstChild);
+    }
+
     locations.forEach(location => {
 
         L.marker([location.latitude, location.longitude])
@@ -84,6 +86,16 @@ function refreshUI() {
     }
 }
 
+function addLocation() {
+    if (name.value !== '') {
+        locations.push(new Location(name.value, latitude.value, longitude.value));
+    } else {
+        message = new Alert('Error', 'Please fill the name', ERROR);
+    }
+    
+    refreshUI();
+}
+
 // Map related
 var map = L.map('map');
 if ("geolocation" in navigator) {
@@ -102,16 +114,11 @@ map.on('click', e => {
     name.value = '';
     latitude.value = e.latlng.lat;
     longitude.value = e.latlng.lng;
+    name.focus();
 });
 
 save.addEventListener('click', e => {
-    if (name.value !== '') {
-        locations.push(new Location(name.value, latitude.value, longitude.value));
-    } else {
-        message = new Alert('Error', 'Please fill the name', ERROR);
-    }
-    
-    refreshUI();
+    addLocation();
 });
 
 alert.addEventListener('click', e => {
@@ -125,6 +132,15 @@ alert.addEventListener('click', e => {
             requestAnimationFrame(fade);
         }
     })();
+});
+
+name.addEventListener('keyup', e => {
+    if (e.keyCode === 13) {
+      addLocation();
+    } else {
+        let value = new RegExp(/[a-zA-Z]/, "g");
+        save.disabled = !value.test(name.value);
+    }
 });
 
 refreshUI();
