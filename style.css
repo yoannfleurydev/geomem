@@ -42,3 +42,38 @@ button.alert-close {
 
 /*-- Map --*/
 #map { height: 500px; }
+
+
+/*-- Save-Form --*/
+.save {
+    display: flex;
+    justify-content: space-around;
+    background: var(--dark-background-color);
+    padding: 1%;
+    color: var(--dark-text-color);
+}
+
+.save > input, .save > h2, .save > button {
+    flex: 1;
+    color: var(--dark-text-color);
+}
+
+/*-- Inputs --*/
+input {
+    font-size: 150%;
+    background: var(--dark-background-color);
+    border: none;
+    border-bottom: var(--dark-text-color) 2px solid;
+    outline-color: var(--dark-text-color);
+}
+
+button {
+    background: var(--dark-background-color);
+    font-size: 150%;
+    border: 2px solid var(--dark-text-color);
+    cursor: pointer;
+}
+
+button::after {
+    content: "+";
+}

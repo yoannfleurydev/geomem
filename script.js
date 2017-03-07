@@ -52,7 +52,7 @@ let alert         = document.getElementById('alert');
 let message = null;
 let locations = new Array();
 
-// Const
+// Constants
 const ERROR = '#F44336';
 const WARNING = '#FFEB3B';
 const INFO = '#00BCD4';
@@ -79,7 +79,10 @@ function refreshUI() {
     });
 
     // Alert related code
-    alert.childNodes.forEach((node) => alert.removeChild(node));
+    while (alert.firstChild) {
+        alert.removeChild(alert.firstChild);
+    }
+    
     if (message !== null) {
         alert.appendChild(message.toDOM())
         message = null;
