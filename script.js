@@ -48,6 +48,7 @@ let longitude     = document.getElementById('longitude');
 let save          = document.getElementById('save');
 let locationsList = document.getElementById('locationsList');
 let alert         = document.getElementById('alert');
+let download      = document.getElementById('download');
 
 let message = null;
 let locations = new Array();
@@ -146,4 +147,29 @@ name.addEventListener('keyup', e => {
     }
 });
 
+download.addEventListener('click', e => {
+    console.info("Downloading file...");
+    downloadData(locations, 'geomem.json', 'json');
+})
+
 refreshUI();
+
+
+/*-- File download --*/
+function downloadData(data, filename, type) {
+    let a = document.createElement("a"),
+        file = new Blob([JSON.stringify(data)], {type: type});
+    if (window.navigator.msSaveOrOpenBlob) {// IE10+
+        window.navigator.msSaveOrOpenBlob(file, filename);
+    } else { // Others
+        var url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);  
+        }, 0); 
+    }
+}

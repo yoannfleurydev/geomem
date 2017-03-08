@@ -11,7 +11,8 @@ features), HTML and CSS.
 ## TODO
 
 * [ ] Offline mode
-* [ ] Data export
+* [x] Data export
+* [ ] Data import
 * [ ] Manifest for mobile support (Add to homescreen feature)
 * [ ] Responsive Web Design
 * [ ] Switch from CSS to SASS

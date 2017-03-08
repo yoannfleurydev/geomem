@@ -7,10 +7,10 @@
         <link rel="manifest" href="manifest.webmanifest">
     </head>
     <body>
-        <header>
+        <header class="header">
             <h1>GeoMem</h1>
         </header>
-        <section class="sub-header">
+        <section class="alerts">
             <div id="alert"></div> 
         </section>
         <section>
@@ -26,6 +26,9 @@
             <input type="number" placeholder="Latitude"  value="" id="latitude"  step="0.000000001">
             <input type="number" placeholder="Longitude" value="" id="longitude" step="0.000000001">
             <button id="save"></button>
+        </section>
+        <section class="download">
+            <button id="download">Download</button>
         </section>
         
         <script src="node_modules/leaflet/dist/leaflet.js"></script>
