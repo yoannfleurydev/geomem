@@ -1,0 +1,6 @@
+CACHE MANIFEST
+index.html
+style.css
+script.js
+node_modules/leaflet/dist/leaflet.css
+node_modules/leaflet/dist/leaflet.js

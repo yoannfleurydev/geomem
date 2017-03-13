@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="manifest.appcache">
     <head>
         <title>Geomem</title>
         <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
@@ -30,6 +30,13 @@
         <section class="download">
             <button id="download">Download</button>
         </section>
+        <nav class="bottom-navigation">
+            <ul class="bottom-navigation-list">
+                <li class="bottom-navigation-list-item">Add location</li>
+                <li class="bottom-navigation-list-item">Maps</li>
+                <li class="bottom-navigation-list-item">List locations</li>
+            </ul>
+        </nav>
         
         <script src="node_modules/leaflet/dist/leaflet.js"></script>
         <script src="script.js"></script>

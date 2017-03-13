@@ -77,3 +77,17 @@ button {
 .save button::after {
     content: "+";
 }
+
+.bottom-navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom-navigation-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    list-style: none;
+}
