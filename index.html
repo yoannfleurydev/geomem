@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html manifest="manifest.appcache">
+<html>
     <head>
         <title>Geomem</title>
         <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
         <link rel="manifest" href="manifest.webmanifest">
     </head>
     <body>
@@ -11,34 +13,37 @@
             <h1>GeoMem</h1>
         </header>
         <section class="alerts">
-            <div id="alert"></div> 
+            <div id="alert"></div>
         </section>
-        <section>
-            <div id="map"></div>
-        </section>
-        <section>
-            <ul id="locationsList">
-            </ul>
-        </section>
-        <section class="save">
+        <section id="save-panel" class="save">
             <h2>Save a location :</h2>
             <input type="text"   placeholder="Name"      value="" id="name">
             <input type="number" placeholder="Latitude"  value="" id="latitude"  step="0.000000001">
             <input type="number" placeholder="Longitude" value="" id="longitude" step="0.000000001">
             <button id="save"></button>
         </section>
+        <section id="map"></section>
+        <section id="locations-panel">
+            <ul id="locationsList"></ul>
+        </section>
         <section class="download">
             <button id="download">Download</button>
         </section>
-        <nav class="bottom-navigation">
-            <ul class="bottom-navigation-list">
-                <li class="bottom-navigation-list-item">Add location</li>
-                <li class="bottom-navigation-list-item">Maps</li>
-                <li class="bottom-navigation-list-item">List locations</li>
-            </ul>
-        </nav>
+        <footer>
+            <div id="save-panel-button">
+                <i class="material-icons">add_location</i>
+            </div>
+            <div id="map-panel-button">
+                <i class="material-icons">map</i>
+            </div>
+            <div id="locations-panel-button">
+                <i class="material-icons">location_on</i>
+            </div>
+        </footer>
         
         <script src="node_modules/leaflet/dist/leaflet.js"></script>
+        <script src="classes/location.js"></script>
+        <script src="classes/alert.js"></script>
         <script src="script.js"></script>
     </body>
 </html>

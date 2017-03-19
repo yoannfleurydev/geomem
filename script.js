@@ -1,62 +1,20 @@
-// Location class
-class Location{
-    constructor(name, latitude, longitude, timestamp = null) {
-        this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.timestamp = timestamp;
-    }
-}
-
-// Alert class
-class Alert {
-    constructor(title, description, color) {
-        this.title = title;
-        this.description = description;
-        this.color = color;
-    }
-
-    toDOM() {
-        let alertDiv = document.createElement('div');
-        alertDiv.className += 'alert';
-        document.documentElement.style.setProperty('--alert-background-color', this.color);
-
-        let alertTitleDiv = document.createElement('div');
-        alertTitleDiv.className += 'alert-title';
-        alertTitleDiv.innerText = this.title;
-
-        let alertDescriptionDiv = document.createElement('div');
-        alertDescriptionDiv.className += 'alert-description';
-        alertDescriptionDiv.innerText = this.description;
-
-        let closeButton = document.createElement('button');
-        closeButton.className = 'alert-close';
-        closeButton.innerHTML = '&times;';
-
-        alertDiv.appendChild(alertTitleDiv);
-        alertDiv.appendChild(alertDescriptionDiv);
-        alertDiv.appendChild(closeButton);
-
-        return alertDiv;
-    }
-}
-
 // DOM Element
-let name          = document.getElementById('name');
-let latitude      = document.getElementById('latitude');
-let longitude     = document.getElementById('longitude');
-let save          = document.getElementById('save');
-let locationsList = document.getElementById('locationsList');
-let alert         = document.getElementById('alert');
-let download      = document.getElementById('download');
+let name           = document.getElementById('name');
+let latitude       = document.getElementById('latitude');
+let longitude      = document.getElementById('longitude');
+let save           = document.getElementById('save');
+let locationsList  = document.getElementById('locationsList');
+let alert          = document.getElementById('alert');
+let download       = document.getElementById('download');
+let savePanel      = document.getElementById('save-panel');
+let locationsPanel = document.getElementById('locations-panel');
+
+let savePanelButton      = document.getElementById('save-panel-button');
+let mapPanelButton       = document.getElementById('map-panel-button');
+let locationsPanelButton = document.getElementById('locations-panel-button');
 
 let message = null;
 let locations = new Array();
-
-// Constants
-const ERROR = '#F44336';
-const WARNING = '#FFEB3B';
-const INFO = '#00BCD4';
 
 // Useful function to refresh the GUI when the user add a new location.
 function refreshUI() {
@@ -65,7 +23,6 @@ function refreshUI() {
     }
 
     locations.forEach(location => {
-
         L.marker([location.latitude, location.longitude])
             .addTo(map)
             .bindPopup(location.name);
@@ -101,8 +58,10 @@ function addLocation() {
 }
 
 // Map related
-var map = L.map('map');
-if ("geolocation" in navigator) {
+var map = L.map('map', {
+    'zoomControl': false
+});
+if ('geolocation' in navigator) {
     navigator.geolocation.watchPosition(position => {
         map.setView([position.coords.latitude, position.coords.longitude], 14);
     });
@@ -115,6 +74,7 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
 
 // Listeners
 map.on('click', e => {
+    savePanel.style.display = 'flex';
     name.value = '';
     latitude.value = e.latlng.lat;
     longitude.value = e.latlng.lng;
@@ -142,22 +102,44 @@ name.addEventListener('keyup', e => {
     if (e.keyCode === 13) {
       addLocation();
     } else {
-        let value = new RegExp(/[a-zA-Z]/, "g");
+        let value = new RegExp(/[a-zA-Z]/, 'g');
         save.disabled = !value.test(name.value);
     }
 });
 
 download.addEventListener('click', e => {
-    console.info("Downloading file...");
+    console.info('Downloading file...');
     downloadData(locations, 'geomem.json', 'json');
-})
+});
+
+savePanel.style.display = 'none';
+savePanelButton.addEventListener('click', e => {
+    if (savePanel.style.display === 'flex') {
+        savePanel.style.display = 'none';
+    } else {
+        savePanel.style.display = 'flex';
+    }
+});
+
+locationsPanel.style.display = 'none';
+locationsPanelButton.addEventListener('click', e => {
+    if (locationsPanel.style.display === 'flex') {
+        locationsPanel.style.display = 'none';
+    } else {
+        locationsPanel.style.display = 'flex';
+    }
+});
+
+mapPanelButton.addEventListener('click', e => {
+    locationsPanel.style.display = 'none';
+    savePanel.style.display = 'none';
+});
 
 refreshUI();
 
-
 /*-- File download --*/
 function downloadData(data, filename, type) {
-    let a = document.createElement("a"),
+    let a = document.createElement('a'),
         file = new Blob([JSON.stringify(data)], {type: type});
     if (window.navigator.msSaveOrOpenBlob) {// IE10+
         window.navigator.msSaveOrOpenBlob(file, filename);

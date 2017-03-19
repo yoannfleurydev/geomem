@@ -4,57 +4,74 @@
     --dark-text-color : #FFFFFF;
 }
 
-* {
-    margin: 0;
+body {
     padding: 0;
+    margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 header {
+    position: fixed;
+    top: 0;
     background: var(--dark-background-color);
     color: var(--dark-text-color);
     text-align: center;
-    padding: 1%;
+    padding: 0.5%;
+    z-index: 500;
+    width: 100%;
 }
 
-/*-- Alert --*/
-.alert {
-    background: var(--alert-background-color);
+footer {
+    position: fixed;
+    bottom: 0;
+    background: var(--dark-background-color);
+    color: var(--dark-text-color);
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    padding: 0.5%;
+    z-index: 500;
+    width: 100%;
+}
+
+footer>div {
     cursor: pointer;
 }
 
-.alert-title {
-    font-size: 150%;
-    color: var(--dark-text-color);
-}
-
-.alert-description {
-    color: var(--dark-text-color);
-}
-
-button.alert-close {
-    background: none;
-    border: none;
-    position: relative;
-    top: 0px;
-    right: 0px;
-}
-
 /*-- Map --*/
-#map { height: 500px; }
-
+html, body, #map { 
+    height: 100%;
+    width: 100%;
+}
 
 /*-- Save-Form --*/
-.save {
-    display: flex;
-    justify-content: space-around;
+#save-panel {
     background: var(--dark-background-color);
-    padding: 1%;
     color: var(--dark-text-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 33%;
+    height: 100%;
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#locations-panel {
+    background: var(--dark-background-color);
+    color: var(--dark-text-color);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 33%;
+    height: 100%;
+    z-index: 500;
+    display: flex;
 }
 
 .save > input, .save > h2, .save > button {
-    flex: 1;
     color: var(--dark-text-color);
 }
 
@@ -76,18 +93,4 @@ button {
 
 .save button::after {
     content: "+";
-}
-
-.bottom-navigation {
-    display: flex;
-    justify-content: space-between;
-}
-
-.bottom-navigation-list {
-    display: flex;
-    justify-content: space-around;
-}
-
-li {
-    list-style: none;
 }
