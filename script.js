@@ -14,7 +14,7 @@ let mapPanelButton       = document.getElementById('map-panel-button');
 let locationsPanelButton = document.getElementById('locations-panel-button');
 
 let message = null;
-let locations = new Array();
+let locations = [];
 
 // Useful function to refresh the GUI when the user add a new location.
 function refreshUI() {
@@ -42,7 +42,7 @@ function refreshUI() {
     }
     
     if (message !== null) {
-        alert.appendChild(message.toDOM())
+        alert.appendChild(message.toDOM());
         message = null;
     }
 }
@@ -89,7 +89,7 @@ alert.addEventListener('click', e => {
     alert.style.opacity = 1;
 
     (function fade() {
-        if ((alert.style.opacity -= .1) < 0) {
+        if ((alert.style.opacity -= 0.1) < 0) {
             alert.childNodes.forEach((node) => alert.removeChild(node));
             alert.style.opacity = 1;
         } else {
