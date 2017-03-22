@@ -71,6 +71,10 @@ html, body, #map {
     display: flex;
 }
 
+.locations-list-item {
+    cursor: pointer;
+}
+
 .save > input, .save > h2, .save > button {
     color: var(--dark-text-color);
 }

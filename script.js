@@ -3,7 +3,7 @@ let name           = document.getElementById('name');
 let latitude       = document.getElementById('latitude');
 let longitude      = document.getElementById('longitude');
 let save           = document.getElementById('save');
-let locationsList  = document.getElementById('locationsList');
+let locationsList  = document.getElementById('locations-list');
 let alert          = document.getElementById('alert');
 let download       = document.getElementById('download');
 let savePanel      = document.getElementById('save-panel');
@@ -15,6 +15,8 @@ let locationsPanelButton = document.getElementById('locations-panel-button');
 
 let message = null;
 let locations = [];
+
+let map = L.map('map', {'zoomControl': false});
 
 // Useful function to refresh the GUI when the user add a new location.
 function refreshUI() {
@@ -28,11 +30,12 @@ function refreshUI() {
             .bindPopup(location.name);
 
         let liDOM = document.createElement('li');
-        let textNode = document.createTextNode(
-            location.name + ' ' + location.latitude + ' ' + location.longitude
-        );
 
-        liDOM.appendChild(textNode);
+        liDOM.appendChild(document.createTextNode(location.name));
+        liDOM.className += "locations-list-item";
+        liDOM.addEventListener('click', e => {
+            map.setView([location.latitude, location.longitude], 16);
+        });
         locationsList.appendChild(liDOM);
     });
 
@@ -58,9 +61,6 @@ function addLocation() {
 }
 
 // Map related
-var map = L.map('map', {
-    'zoomControl': false
-});
 if ('geolocation' in navigator) {
     navigator.geolocation.watchPosition(position => {
         map.setView([position.coords.latitude, position.coords.longitude], 14);
