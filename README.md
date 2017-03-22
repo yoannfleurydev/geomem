@@ -16,7 +16,7 @@ features), HTML and CSS.
 * [ ] Manifest for mobile support (Add to homescreen feature)
 * [ ] Responsive Web Design
 * [ ] Switch from CSS to SASS
-* [ ] Add LICENCE
+* [x] Add LICENCE
 * [ ] Add CONTRIBUTING
 * [ ] Add icon
 * [ ] Add favicon
