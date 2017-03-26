@@ -1,14 +1,22 @@
 {
   "name": "geomem",
-  "version": "0.0.1",
+  "version": "0.5.1",
   "description": "Application to set the location you were one day",
   "main": "index.html",
   "dependencies": {
     "leaflet": "^1.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.5.1",
+    "nodemon": "^1.11.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss src/scss/main.scss dist/css/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "build": "npm run build-css",
+    "watch": "npm run watch-css",
+    "start": "npm run watch"
   },
   "author": "Yoann Fleury <yoann.fleury@yahoo.com>",
   "license": "MIT",
