@@ -7,10 +7,25 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet">
         <link rel="manifest" href="manifest.webmanifest">
+        <link rel="icon" href="img/favicon.png" type="image/png">
     </head>
     <body>
-        <header class="header">
-            <h1>GeoMem</h1>
+        <header>
+            <h1><img src="img/dark-background-m.png" height="50px"></h1>
+            <div class="download-upload">
+                <button id="download" class="download-upload-item">
+                    <i class="material-icons">file_download</i>
+                </button>
+                <!--<button id="upload" class="download-upload-item">
+                    <i class="material-icons">file_upload</i>
+                </button>-->
+                <label for="upload" class="download-upload-item">
+                    <div class="download-upload-item-span">
+                        <i class="material-icons">file_upload</i>
+                    </div>
+                    <input type="file" id="upload" name="upload">
+                </label>
+            </div>
         </header>
         <section class="alerts">
             <div id="alert"></div>
@@ -24,15 +39,8 @@
         </section>
         <section id="map"></section>
         <section id="locations-panel">
+            <h2>Locations list :</h2>
             <ul id="locations-list"></ul>
-        </section>
-        <section class="download-upload">
-            <button id="download">
-                <i class="material-icons">file_download</i>
-            </button>
-            <button id="upload">
-                <i class="material-icons">file_upload</i>
-            </button>
         </section>
         <footer>
             <div id="save-panel-button">

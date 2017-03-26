@@ -16,7 +16,7 @@ let locationsPanelButton = document.getElementById('locations-panel-button');
 let message = null;
 let locations = [];
 
-let map = L.map('map', {'zoomControl': false});
+let map = L.map('map', {'zoomControl': false, 'attributionControl': false});
 
 // Useful function to refresh the GUI when the user add a new location.
 function refreshUI() {
@@ -108,9 +108,12 @@ name.addEventListener('keyup', e => {
 });
 
 download.addEventListener('click', e => {
-    console.info('Downloading file...');
-    downloadData(locations, 'geomem.json', 'json');
+    downloadData(locations, 'geomem.txt', 'json');
 });
+
+document.getElementById('upload').addEventListener('change', e => {
+    uploadData(e.target.files[0]);
+}, false);
 
 savePanel.style.display = 'none';
 savePanelButton.addEventListener('click', e => {
@@ -135,6 +138,12 @@ mapPanelButton.addEventListener('click', e => {
     savePanel.style.display = 'none';
 });
 
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+  
+} else {
+  messages.push(new Alert('File API', 'The File APIs are not fully supported in this browser.', WARNING));
+}
+
 refreshUI();
 
 /*-- File download --*/
@@ -153,5 +162,25 @@ function downloadData(data, filename, type) {
             document.body.removeChild(a);
             window.URL.revokeObjectURL(url);  
         }, 0); 
+    }
+}
+
+/*-- File upload --*/
+function uploadData(file) {
+    var textType = /text.*/;
+
+    console.log(file.type);
+
+    if (file.type.match(textType)) {
+        var reader = new FileReader();
+
+        reader.onload = e => {
+            locations = JSON.parse(reader.result);
+            refreshUI();
+        };
+
+        reader.readAsText(file);	
+    } else {
+        messages.push(new Alert('File', 'File not supported!', ERROR));
     }
 }

@@ -19,6 +19,38 @@ header {
     padding: 0.5%;
     z-index: 500;
     width: 100%;
+
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.download-upload {
+    display: flex;
+}
+
+.download-upload-item {
+    border: none;
+    padding: 10%;
+}
+
+.download-upload-item-span {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.download-upload-item > input[type="file"] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
 }
 
 footer {
@@ -93,6 +125,7 @@ button {
     font-size: 150%;
     border: 2px solid var(--dark-text-color);
     cursor: pointer;
+    color: var(--dark-text-color);
 }
 
 .save button::after {

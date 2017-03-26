@@ -12,11 +12,11 @@ features), HTML and CSS.
 
 * [ ] Offline mode
 * [x] Data export
-* [ ] Data import
+* [x] Data import
 * [ ] Manifest for mobile support (Add to homescreen feature)
 * [ ] Responsive Web Design
 * [ ] Switch from CSS to SASS
 * [x] Add LICENCE
 * [ ] Add CONTRIBUTING
-* [ ] Add icon
-* [ ] Add favicon
+* [x] Add icon
+* [x] Add favicon
