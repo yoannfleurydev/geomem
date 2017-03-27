@@ -1,23 +1,22 @@
 {
   "name": "geomem",
-  "version": "0.5.1",
-  "description": "Application to set the location you were one day",
+  "version": "0.5.2",
+  "description": "Application to set the location you went",
   "main": "index.html",
   "dependencies": {
     "leaflet": "^1.0.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-preset-env": "^1.2.2",
     "node-sass": "^4.5.1",
     "nodemon": "^1.11.0",
-    "rollup": "^0.41.6"
+    "rollup": "^0.41.6",
+    "rollup-plugin-node-resolve": "^2.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "node-sass --include-path scss src/scss/main.scss dist/css/style.css",
     "watch-css": "nodemon --ext scss -x \"npm run build-css\"",
-    "build-js": "rollup src/js/main.js --format iife --output dist/js/main.js",
+    "build-js": "rollup -c",
     "watch-js": "nodemon --ignore dist/ --ext js -x \"npm run build-js\"",
     "build": "npm run build-css & npm run build-js",
     "watch": "npm run watch-css & npm run watch-js",
