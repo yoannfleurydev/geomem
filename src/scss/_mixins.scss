@@ -1,0 +1,4 @@
+@mixin dark-background {
+    background-color: $dark-background-color;
+    color: $dark-text-color;
+}
