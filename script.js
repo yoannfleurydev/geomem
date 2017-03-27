@@ -16,6 +16,10 @@ let locationsPanelButton = document.getElementById('locations-panel-button');
 let message = null;
 let locations = [];
 
+let marker = L.icon({
+    iconUrl: 'img/marker.png',
+    iconSize: [30, 30]
+});
 let map = L.map('map', {'zoomControl': false, 'attributionControl': false});
 
 // Useful function to refresh the GUI when the user add a new location.
@@ -25,7 +29,7 @@ function refreshUI() {
     }
 
     locations.forEach(location => {
-        L.marker([location.latitude, location.longitude])
+        L.marker([location.latitude, location.longitude], {icon: marker})
             .addTo(map)
             .bindPopup(location.name);
 
