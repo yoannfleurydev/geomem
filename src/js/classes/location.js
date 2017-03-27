@@ -1,4 +1,4 @@
-class Location{
+export class Location{
     constructor(name, latitude, longitude, timestamp = null) {
         this.name = name;
         this.latitude = latitude;

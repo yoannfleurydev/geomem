@@ -1,4 +1,4 @@
-class Alert {
+export class Alert {
     constructor(title, description, color) {
         this.title = title;
         this.description = description;
@@ -31,6 +31,6 @@ class Alert {
 }
 
 // Constants
-const ERROR = '#F44336';
-const WARNING = '#FFEB3B';
-const INFO = '#00BCD4';
+export const ERROR   = '#F44336';
+export const WARNING = '#FFEB3B';
+export const INFO    = '#00BCD4';

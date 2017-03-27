@@ -1,3 +1,6 @@
+import { Alert, ERROR } from './classes/alert';
+import { Location } from './classes/location';
+
 // DOM Element
 let name           = document.getElementById('name');
 let latitude       = document.getElementById('latitude');
