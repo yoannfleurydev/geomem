@@ -1,0 +1,38 @@
+header {
+    @include dark-background;
+    z-index: $header-footer-z-index;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.download-upload {
+    display: flex;
+
+    .download-upload-item {
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        button {
+            border: none;
+            padding: none;
+        }
+
+        input[type="file"] {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+    }
+}

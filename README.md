@@ -8,8 +8,9 @@ application and use it too ! Nobody can control these data.
 
 ## Installation
 
-* Clone
+* `git clone https://github.com/yoannfleurydev/geomem && cd geomem`
 * `npm install`
+* `npm run build`
 
 ## TODO
 

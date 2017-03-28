@@ -13,24 +13,25 @@
         <header>
             <h1><img src="img/dark-background-m.png" height="50px"></h1>
             <div class="download-upload">
-                <button id="download" class="download-upload-item">
-                    <i class="material-icons">file_download</i>
-                </button>
-                <!--<button id="upload" class="download-upload-item">
-                    <i class="material-icons">file_upload</i>
-                </button>-->
-                <label for="upload" class="download-upload-item">
-                    <div class="download-upload-item-span">
-                        <i class="material-icons">file_upload</i>
-                    </div>
-                    <input type="file" id="upload" name="upload">
-                </label>
+                <div class="download-upload-item">
+                    <button id="download">
+                        <i class="material-icons">file_download</i>
+                    </button>
+                </div>
+                <div class="download-upload-item">
+                    <label for="upload">
+                        <div class="download-upload-item-span">
+                            <i class="material-icons">file_upload</i>
+                        </div>
+                        <input type="file" id="upload" name="upload">
+                    </label>
+                </div>
             </div>
         </header>
         <section class="alerts">
             <div id="alert"></div>
         </section>
-        <section id="save-panel" class="save">
+        <section id="save-panel" class="panel save">
             <h2>Save a location :</h2>
             <input type="text"   placeholder="Name"      value="" id="name">
             <input type="number" placeholder="Latitude"  value="" id="latitude"  step="0.000000001">
@@ -38,7 +39,7 @@
             <button id="save"></button>
         </section>
         <section id="map"></section>
-        <section id="locations-panel">
+        <section id="locations-panel" class="panel">
             <h2>Locations list :</h2>
             <ul id="locations-list"></ul>
         </section>
