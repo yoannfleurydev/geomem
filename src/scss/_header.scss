@@ -20,6 +20,7 @@ header {
         justify-content: center;
 
         button {
+            @include dark-background;
             border: none;
             padding: none;
         }

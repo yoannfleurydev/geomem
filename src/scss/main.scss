@@ -15,24 +15,3 @@ body {
 .material-icons:hover {
     cursor: pointer;
 }
-
-/*-- Inputs --*/
-input {
-    @include dark-background;
-    font-size: 150%;
-    border: none;
-    border-bottom: $dark-text-color 2px solid;
-    outline-color: $dark-text-color;
-}
-
-button {
-    @include dark-background;
-    font-size: 150%;
-    border: 2px solid $dark-text-color;
-    cursor: pointer;
-    color: $dark-text-color;
-}
-
-.save button::after {
-    content: "+";
-}

@@ -15,12 +15,23 @@
     left: 0;
 
     input, button {
+        @include dark-background;
         padding: 20px;
         margin: 20px;
+        border: $dark-background-color 2px solid;
+        border-bottom: $dark-text-color 2px solid;
+
+        font-size: 150%;
 
         #save {
             content: "+";
         }
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: $dark-background-hover;
+        border: $dark-text-color 2px solid;
     }
 }
 
