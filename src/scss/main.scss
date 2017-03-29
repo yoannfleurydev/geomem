@@ -3,6 +3,7 @@
 
 @import 'leaflet';
 @import 'header';
+@import 'footer';
 
 body {
     padding: 0;
@@ -10,23 +11,9 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-footer {
-    @include dark-background;
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    justify-content: space-around;
-    text-transform: uppercase;
-    padding: 0.5%;
-    z-index: $header-footer-z-index;
-    width: 100%;
-    
-    div {
-        cursor: pointer;
-    }
+.material-icons:hover {
+    cursor: pointer;
 }
-
-
 
 /*-- Map --*/
 html, body, #map { 

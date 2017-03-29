@@ -1,0 +1,24 @@
+footer {
+    @include dark-background;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    align-items: baseline;
+    z-index: $header-footer-z-index;
+    width: 100%;
+
+    div {
+        height: 50px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 33%;
+
+        &:hover {
+            background-color: #3f4347;
+        }
+    }
+}
