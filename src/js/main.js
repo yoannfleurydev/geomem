@@ -115,7 +115,7 @@ name.addEventListener('keyup', e => {
 });
 
 download.addEventListener('click', e => {
-    downloadData(locations, 'geomem.txt', 'json');
+    downloadData(locations, `geomem${new Date().getTime()}.txt`, 'json');
 });
 
 document.getElementById('upload').addEventListener('change', e => {
