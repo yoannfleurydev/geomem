@@ -3,6 +3,7 @@
 
 @import 'leaflet';
 @import 'header';
+@import 'panels';
 @import 'footer';
 
 body {
@@ -13,46 +14,6 @@ body {
 
 .material-icons:hover {
     cursor: pointer;
-}
-
-/*-- Map --*/
-html, body, #map { 
-    height: 100%;
-    width: 100%;
-}
-
-.panel {
-    @include dark-background;
-    position: fixed;
-    top: 0;
-    z-index: $panels-z-index;
-}
-
-/*-- Save-Form --*/
-#save-panel {
-    left: 0;
-    width: 33%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-
-
-#locations-panel {
-    right: 0;
-    width: 33%;
-    height: 100%;
-    display: flex;
-}
-
-.locations-list-item {
-    cursor: pointer;
-}
-
-.save > input, .save > h2, .save > button {
-    color: $dark-text-color;
 }
 
 /*-- Inputs --*/

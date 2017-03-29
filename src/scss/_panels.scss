@@ -1,0 +1,33 @@
+.panel {
+    @include dark-background;
+    position: fixed;
+    top: 0;
+    z-index: $panels-z-index;
+    height: 100%;
+    width: 20%;
+    margin-top: 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#save-panel {
+    left: 0;
+
+    input, button {
+        padding: 20px;
+        margin: 20px;
+
+        #save {
+            content: "+";
+        }
+    }
+}
+
+#locations-panel {
+    right: 0;
+
+    .locations-list-item {
+        cursor: pointer;
+    }
+}
