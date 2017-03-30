@@ -42,3 +42,18 @@
         cursor: pointer;
     }
 }
+
+@media screen 
+  and (max-width: 600px) {
+    .panel {
+        width: 80%;
+    }
+
+    #save-panel {
+        input, button {
+            padding: 10px;
+
+            font-size: 100%;
+        }
+    }
+}

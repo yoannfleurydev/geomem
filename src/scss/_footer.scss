@@ -22,3 +22,26 @@ footer {
         }
     }
 }
+
+@media screen 
+  and (max-width: 600px) {
+    footer {
+        @include dark-background;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: space-around;
+        text-transform: uppercase;
+        align-items: baseline;
+        z-index: $header-footer-z-index;
+        width: 100%;
+
+        div {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 33%;
+        }
+    } 
+}
