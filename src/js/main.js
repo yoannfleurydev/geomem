@@ -1,4 +1,4 @@
-import { Alert, ERROR } from './classes/alert';
+import { Alert } from './classes/alert';
 import { Location } from './classes/location';
 
 // DOM Element
@@ -61,7 +61,7 @@ function addLocation() {
     if (name.value !== '') {
         locations.push(new Location(name.value, latitude.value, longitude.value));
     } else {
-        message = new Alert('Error', 'Please fill the name', ERROR);
+        message = new Alert('Error', 'Please fill the name');
     }
     
     refreshUI();
@@ -74,7 +74,7 @@ if ('geolocation' in navigator) {
     });
 } else {
     map.setView([49, 1], 14);
-    message = new Alert('Error', 'Enable to use the geolocation', ERROR);
+    message = new Alert('Error', 'Enable to use the geolocation');
 }
 
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
@@ -188,6 +188,6 @@ function uploadData(file) {
 
         reader.readAsText(file);	
     } else {
-        messages.push(new Alert('File', 'File not supported!', ERROR));
+        messages.push(new Alert('File', 'File not supported!'));
     }
 }
