@@ -1,0 +1,22 @@
+.alerts {
+    position: fixed;
+    top: 100px;
+    background: $alert-background-color;
+    width: 100%;
+    z-index: $header-footer-z-index;
+    display: flex;
+    cursor: pointer;
+    align-content: space-between;
+
+    #alert {
+        width: 100%;
+    }
+
+    .alert-title {
+        font-size: 200%;
+    }
+
+    .alert-description {
+        font-size: 150%;
+    }
+}
