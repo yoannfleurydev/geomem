@@ -7,6 +7,7 @@
     "leaflet": "^1.0.2"
   },
   "devDependencies": {
+    "clean-css": "^4.0.12",
     "node-sass": "^4.5.1",
     "nodemon": "^1.11.0",
     "rollup": "^0.41.6",
