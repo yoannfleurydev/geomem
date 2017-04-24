@@ -7,7 +7,7 @@
     "leaflet": "^1.0.2"
   },
   "devDependencies": {
-    "clean-css": "^4.0.12",
+    "clean-css-cli": "^4.0.12",
     "node-sass": "^4.5.1",
     "nodemon": "^1.11.0",
     "rollup": "^0.41.6",
@@ -15,7 +15,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "node-sass --include-path scss src/scss/main.scss dist/css/style.css",
+    "minify-css": "cleancss dist/css/style.css -o dist/css/style.min.css",
+    "build-css": "node-sass --include-path scss src/scss/main.scss dist/css/style.css & yarn run minify-css",
     "watch-css": "nodemon --ext scss -x \"npm run build-css\"",
     "build-js": "rollup -c",
     "watch-js": "nodemon --ignore dist/ --ext js -x \"npm run build-js\"",

@@ -6,6 +6,12 @@ features), HTML and CSS.
 I use this application to set the "I went" locations. You can self host this 
 application and use it too ! Nobody can control these data.
 
+## Requirements
+
+* git
+* yarn `npm i -g yarn`
+* a http server `yarn global add http-server`
+
 ## Installation
 
 * `git clone https://github.com/yoannfleurydev/geomem && cd geomem`
