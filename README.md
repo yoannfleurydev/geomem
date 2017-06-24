@@ -24,10 +24,10 @@ application and use it too ! Nobody can control these data.
 * [x] Data export
 * [x] Data import
 * [ ] Manifest for mobile support (Add to homescreen feature)
-* [ ] Responsive Web Design
+* [x] Responsive Web Design
 * [x] Switch from CSS to SASS
 * [x] Add LICENCE
-* [ ] Add CONTRIBUTING
+* [x] Add CONTRIBUTING
 * [x] Add icon
 * [x] Add favicon
 * [ ] Add tests
