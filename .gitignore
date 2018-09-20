@@ -1,2 +1,3 @@
 # Distribution folder, contains the compiled files.
 dist/
+node_modules/
