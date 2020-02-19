@@ -69,7 +69,7 @@ function addLocation() {
 
 // Map related
 if ('geolocation' in navigator) {
-    navigator.geolocation.watchPosition(position => {
+    navigator.geolocation.getCurrentPosition(position => {
         map.setView([position.coords.latitude, position.coords.longitude], 14);
     });
 } else {
