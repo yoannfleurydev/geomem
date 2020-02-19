@@ -1,6 +1,6 @@
 {
   "name": "geomem",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Application to set the location you went",
   "main": "index.html",
   "browser": "index.html",
