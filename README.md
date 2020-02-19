@@ -10,13 +10,12 @@ application and use it too ! Nobody can control these data.
 
 * git
 * yarn `npm i -g yarn`
-* a http server `yarn global add http-server`
 
 ## Installation
 
 * `git clone https://github.com/yoannfleurydev/geomem && cd geomem`
 * `yarn install`
-* `yarn run build`
+* `yarn start`
 
 ## TODO
 

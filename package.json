@@ -7,21 +7,13 @@
     "leaflet": "^1.0.2"
   },
   "devDependencies": {
-    "clean-css-cli": "^4.0.12",
-    "node-sass": "^4.5.1",
-    "nodemon": "^1.11.0",
-    "rollup": "^0.41.6",
-    "rollup-plugin-node-resolve": "^2.0.0"
+    "parcel": "1.12.4",
+    "sass": "^1.25.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "minify-css": "cleancss dist/css/style.css -o dist/css/style.min.css",
-    "build-css": "node-sass --include-path scss src/scss/main.scss dist/css/style.css & yarn run minify-css",
-    "watch-css": "nodemon --ext scss -x \"npm run build-css\"",
-    "build-js": "rollup -c",
-    "watch-js": "nodemon --ignore dist/ --ext js -x \"npm run build-js\"",
-    "build": "npm run build-css & npm run build-js",
-    "watch": "npm run watch-css & npm run watch-js",
+    "build": "parcel build index.html",
+    "watch": "parcel index.html",
     "start": "npm run watch"
   },
   "author": "Yoann Fleury <yoann.fleury@yahoo.com>",
