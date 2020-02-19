@@ -1,5 +1,7 @@
 # GEOMEM
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d1fc834d-7d6b-4ef2-8bbf-b429e1a2d78b/deploy-status)](https://app.netlify.com/sites/geomem/deploys)
+
 Geomem is a simple application written in JavaScript (Vanilla using ES6 
 features), HTML and CSS.
 

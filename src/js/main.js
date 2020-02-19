@@ -77,7 +77,7 @@ if ('geolocation' in navigator) {
     message = new Alert('Error', 'Enable to use the geolocation');
 }
 
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
 
 // Listeners
 map.on('click', e => {
