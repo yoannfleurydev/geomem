@@ -20,7 +20,7 @@ let message = null;
 let locations = [];
 
 let marker = L.icon({
-    iconUrl: 'img/marker.png',
+    iconUrl: require('../img/marker.png'),
     iconSize: [30, 30]
 });
 let map = L.map('map', {'zoomControl': false, 'attributionControl': false});
